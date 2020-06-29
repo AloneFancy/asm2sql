@@ -5,6 +5,7 @@ This project will simulate how an online platform such as Tiki works.
 ## Installation
 
 Use XAMPP v.3.2.4 as a server connection. Mysql to implement the database.
+
 MySQL:
    User: root
    Password:
