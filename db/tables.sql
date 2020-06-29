@@ -1,15 +1,13 @@
 
-CREATE DATABASE `Employee`;
-USE `Employee`;
+CREATE DATABASE `Tiki`;
+USE `Tiki`;
 
---Bảng ngành hàng
-DROP TABLE IF EXISTS `typeProd`
+
 CREATE TABLE `typeProd`(
-	`type` varchar(40) ,
+	`type` varchar(40),
 	PRIMARY KEY (type)
 );
--- Bảng mẫu sản phẩm
-DROP TABLE IF EXISTS `productModel`
+
 CREATE TABLE `productModel` (
    `id` int UNIQUE NOT NULL AUTO_INCREMENT ,
    `name` varchar(40),
@@ -25,19 +23,19 @@ CREATE TABLE `productModel` (
 CREATE TABLE `colorProd`(
       `color`varchar(40),
       `id_Prod` int UNIQUE not NULL AUTO_INCREMENT ,
-      FOREIGN KEY(idProd) REFERENCES productModel(id)
+      FOREIGN KEY(id_Prod) REFERENCES productModel(id)
 );
 
 CREATE  TABLE `storage`( 
       `id` int UNIQUE NOT NULL AUTO_INCREMENT,
       `name` varchar(40),
       `address` varchar(255), 
-      `producerID`int UNIQUE  NOT NULL AUTO_INCREMENT,
+      `producerID`int UNIQUE  NOT NULL 
 );
 
 CREATE TABLE `product`(
       `id` int UNIQUE  NOT NULL AUTO_INCREMENT ,
-      `STT`int UNIQUE NOT NULL AUTO_INCREMENT ,
+      `STT`int UNIQUE NOT NULL  ,
       `idStorage` int UNIQUE NOT NULL ,
       `stock_in_date` DATE not NULL ,
       `stock_out_date` DATE,
@@ -70,13 +68,6 @@ Tuy nhiên: shop khuyên bạn nên cắm cố định dây với phần giác c
 Thân ấm bằng inox ngoại nhập không gây độc hại, quai ấm bằng nhựa chống cháy.\n
 Tiết kiệm điện năng tiêu thụ, ấm có tỷ lệ chuyển đổi điện năng sang nhiệt năng khoảng 98%.','Không màu','Viettien','Ấm nước');
 
-/*CREATE TRIGGER test BEFORE INSERT ON productModel 
- FOR EACH ROW
- BEGIN
-
- 
-
- END*/
 
 
-
+--
