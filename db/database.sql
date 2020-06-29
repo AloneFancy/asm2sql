@@ -4,14 +4,34 @@ INSERT INTO typeProd VALUES
 ('Ấm nước')
 ;
 
+
+INSERT INTO colorProd VALUES
+(1,'Nâu'),
+(2,'Đen'),
+(11,'Không màu')
+;
+
 INSERT INTO productModel VALUES
-(1,'Giày văn phòng','description','available','
-Được may từ chất liệu da bò\n
+(1,'Giày văn phòng','Được may từ chất liệu da bò\n
 Đế cao su rãnh chống trơn trượt hiệu quả\n
 Đường may tỉ mỉ, tinh tế\n
-Lót chân da thật mềm mại hỗ trợ di chuyển\n
+Lót chân da thật mềm mại hỗ trợ di chuyển\n','available','
+Thương hiệu:	SUNPOLO\n
+Xuất xứ:	Việt Nam\n
+SKU:	6936588933581\n
+Model:	SUMU1732DN\n
+Chất liệu:	Da bò, đế cao su
 ', 'Sunpolo','Giày'),
-(2,'Giày văn phòng','description','available','detail', 'Viettien','Giày'),
+(2,'Giày văn phòng','Được may từ chất liệu da bò\n
+Đế cao su rãnh chống trơn trượt hiệu quả\n
+Đường may tỉ mỉ, tinh tế\n
+Lót chân da thật mềm mại hỗ trợ di chuyển\n','available','
+Thương hiệu:	SUNPOLO\n
+Xuất xứ:	Việt Nam\n
+SKU:	6936588933581\n
+Model:	SUMU1732DN\n
+Chất liệu	Da bò, đế cao su
+', 'Sunpolo','Giày'),
 (3,'Giày văn phòng','description','available','detail', 'Viettien','Giày'),
 (4,'Giày văn phòng','description','available','detail', 'Viettien','Giày'),
 (5,'Giày văn phòng','description','available','detail', 'Viettien','Giày'),
