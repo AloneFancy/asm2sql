@@ -1,12 +1,11 @@
 USE `Tiki`;
+
+/*       Product            */
+
 INSERT INTO typeProd VALUES
 ('Giày văn phòng'),
 ('Ấm điện')
 ;
-
-
-
-
 INSERT INTO productModel VALUES
 (1,'Giày Mọi Nam Da Bò Sunpolo SUMU1732DN
 ','Được may từ chất liệu da bò\n

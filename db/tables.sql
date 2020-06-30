@@ -88,7 +88,7 @@ CREATE TABLE `provider`(
 );
 
 /*-RECEIPT*/
-CREATE TABLE `order`( /*đơn hàng*/
+CREATE TABLE `orders`( /*đơn hàng*/
       `id`              INT UNIQUE NOT NULL AUTO_INCREMENT ,
       `payment_method`  varchar (255),
       `destinaton`      varchar (255),
@@ -116,13 +116,13 @@ CREATE TABLE `receipt`( /*hóa đơn*/
       `id_customer`        int UNIQUE ,
       `id_staff_incharge`     int UNIQUE ,
       PRIMARY KEY (id),
-      /*FOREIGN KEY (id_order) REFERENCES order(id),*/
+      /*FOREIGN KEY (id_order) REFERENCES orders(id),*/
       FOREIGN KEY (id_customer) REFERENCES customer(id)
 );
-/*ALTER TABLE `receipt`
-ADD CONSTRAINT 	fk_id_order	FOREIGN KEY (id_order) 
-				REFERENCES order(id); 
-				ON DELETE CASCADE	;	*/    
+ALTER TABLE `receipt`
+ADD CONSTRAINT fk_id_order	FOREIGN KEY (id_order) 
+				REFERENCES orders(id) 
+				ON DELETE CASCADE	;
 
 
 CREATE TABLE `product_in_receipt`( /*sản phẩm trong hóa đơn*/
