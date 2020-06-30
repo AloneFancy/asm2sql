@@ -13,7 +13,7 @@ INSERT INTO productModel VALUES
 Đế cao su rãnh chống trơn trượt hiệu quả\n
 Đường may tỉ mỉ, tinh tế\n
 Lót chân da thật mềm mại hỗ trợ di chuyển','available','
-Thương hiệu:	SUNPOLO\n
+Thương hiệu:	S   UNPOLO\n
 Xuất xứ:	Việt Nam\n
 SKU:	6936588933581\n
 Model:	SUMU1732DN\n
@@ -39,7 +39,7 @@ Model:NAG0304', 'Nagakawa','Ấm điện'),
 (11,'Ấm điện đun nước 5 lít ấm siêu tốc có còi báo khi sôi tiết kiệm điện','Ấm điện đun nước 5 lít ấm siêu tốc có còi báo khi sôi tiết kiệm điện\n
 Công suất: 1500W\n
 Công suất cao đun sôi nước nhanh chỉ trong vòng 15’ cho 5 lít nước\n
-Khi nước sôi, sẽ có còi báo rất thông minh\n
+Khi nước sôi, sẽ có còi báo rấ3t thông minh\n
 Dây nguồn rời, ấm điện sử dụng rắc cắm rời, dây dài 1,5 mét. Khi không sử dụng có thể rút ra khỏi ấm\m
 Tuy nhiên: shop khuyên bạn nên cắm cố định dây với phần giác cắm của ấm sẽ tốt hơn.\n
 Thân ấm bằng inox ngoại nhập không gây độc hại, quai ấm bằng nhựa chống cháy.\n
