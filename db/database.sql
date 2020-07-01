@@ -51,3 +51,6 @@ INSERT INTO colorProd VALUES
 ('Nâu',1),
 ('Đen',1),
 ('Không màu',11);
+
+INSERT INTO member VALUES
+('hentai@outlook.com','03165661','senpai','senpaiwithhentai');

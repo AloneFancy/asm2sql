@@ -43,15 +43,19 @@ CREATE TABLE `address`(
 );
 
 CREATE TABLE `customer`(
-      `id`        int UNIQUE NOT  NULL ,
+      `id`        varchar(255) UNIQUE NOT  NULL ,
       `gender`    char(6),
       `birthday`  DATE ,
       PRIMARY KEY (id)
 );
 
+ALTER TABLE `customer`
+ADD CONSTRAINT fk_id FOREIGN KEY (id)
+                        REFERENCES member(email)
+                        ON DELETE CASCADE;
 
 CREATE TABLE `review`(
-      `id_customer`     int UNIQUE ,
+      `id_customer`     VARCHAR (255) UNIQUE ,
       `id_product`      int UNIQUE ,
       `comment`         VARCHAR (65535),
       `date`            DATE ,
@@ -73,12 +77,16 @@ CREATE TABLE `seller`(
       `business_reg_num`VARCHAR (30),
       `store_name`      VARCHAR (40),
       `type_prod`       varchar(40),
-      `id_seller`       int UNIQUE NOT NULL ,
+      `id_seller`       varchar(255) UNIQUE NOT NULL ,
       PRIMARY KEY (id_seller)
-);/*Cần xem lại fk id_seller*/
-/*Giá bán*/
+);
+ALTER TABLE `seller`
+ADD CONSTRAINT fk_id_seller FOREIGN KEY (id_seller)
+                              REFERENCES member(email)
+                              ON DELETE CASCADE;
+
 CREATE TABLE `price`(
-      `id_seller`       int UNIQUE NOT NULL ,
+      `id_seller`       varchar(255) UNIQUE NOT NULL ,
       `id_productModel` int UNIQUE NOT NULL ,
       `price`           int NOT NULL ,
       `start_date`      DATE ,
@@ -86,7 +94,7 @@ CREATE TABLE `price`(
       PRIMARY KEY (id_seller,id_productModel,price,start_date,end_date)
 );
 ALTER TABLE `price`
-ADD CONSTRAINT fk_id_seller	FOREIGN KEY (id_seller)
+ADD CONSTRAINT fk_id_seller_from_price	FOREIGN KEY (id_seller)
 				REFERENCES seller(id_seller) 
 				ON DELETE CASCADE	;
 
@@ -96,7 +104,7 @@ ADD CONSTRAINT fk_id_productModel	FOREIGN KEY (id_productModel)
 				ON DELETE CASCADE	;
 
 CREATE TABLE `provider`(
-      `id_seller`       INT  UNIQUE NOT  NULL ,
+      `id_seller`       varchar(255)  UNIQUE NOT  NULL ,
       `id_productModel` int UNIQUE NOT NULL ,
       `infoGuarantee`   varchar(255),
       PRIMARY KEY (id_seller,id_productModel) ,
@@ -119,7 +127,7 @@ CREATE TABLE `orders`( /*đơn hàng*/
       `destinaton`      varchar (255),
       `date`            DATE ,
       `status`          VARCHAR(255),
-      `id_customer`     int,
+      `id_customer`     varchar(255),
       PRIMARY KEY (id),
       FOREIGN KEY (id_customer) REFERENCES customer(id)
 );
@@ -128,7 +136,7 @@ CREATE TABLE `Co_Don_hang_nha_ban_mau_sp`(
       `buy_amount`      int,
       `id_order`        int UNIQUE ,
       `id_productModel` int UNIQUE ,
-      `id_seller`       int UNIQUE ,
+      `id_seller`       varchar(255) UNIQUE ,
       PRIMARY KEY (id_order,id_productModel,id_seller)
 );
 
@@ -224,7 +232,7 @@ CREATE  TABLE `storage`(
       `id`              int UNIQUE NOT NULL AUTO_INCREMENT,
       `name`            varchar(40),
       `address`         varchar(255), 
-      `producerID`int UNIQUE  NOT NULL,
+      `producerID`varchar(255) UNIQUE  NOT NULL,
       PRIMARY KEY (id) 
 );
 ALTER TABLE `storage`
