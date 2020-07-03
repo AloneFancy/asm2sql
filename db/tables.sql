@@ -29,7 +29,7 @@ CREATE TABLE `colorProd`(
 
 
 CREATE TABLE `member`(
-      `email`     VARCHAR (255),
+      `email`     VARCHAR (255) UNIQUE,
       `phone_num` varchar(255),
       `name`      VARCHAR (255),
       `password`  VARCHAR (511),
@@ -37,7 +37,7 @@ CREATE TABLE `member`(
 );
 
 CREATE TABLE `address`(
-      `email`     varchar(255),
+      `email`     varchar(255) UNIQUE,
       `address`   varchar(255),
       FOREIGN KEY (email) REFERENCES member(email)
 );
@@ -57,7 +57,7 @@ ADD CONSTRAINT fk_id FOREIGN KEY (id)
 CREATE TABLE `review`(
       `id_customer`     VARCHAR (255) UNIQUE ,
       `id_product`      int UNIQUE ,
-      `comment`         VARCHAR (65535),
+      `comment`         VARCHAR (200),
       `date`            DATE ,
       `star`            int, /* From 1 to 5*/
       PRIMARY KEY (id_customer,id_product)
@@ -258,7 +258,10 @@ ADD CONSTRAINT fk1_id_product	FOREIGN KEY (id_product)
 				REFERENCES product(id_product) 
 				ON DELETE CASCADE	;
 
-
+ALTER TABLE `product`
+ADD CONSTRAINT fk2_id_product FOREIGN KEY (id_product)
+                              REFERENCES productModel(id)
+                              ON DELETE CASCADE;
 /*DEPARTMENT*/
 
 CREATE TABLE  `department`(
